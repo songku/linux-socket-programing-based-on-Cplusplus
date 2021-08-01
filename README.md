@@ -1,6 +1,8 @@
 # 写在前面
 本编程基于c语言，但部分语法比如sstream用到了c++语言，因此程序编译注意使用g++编译器
+
 `g++ -o client tcpclient.cpp`
+
 `g++ -o server tcpserver.c`
 # client运行方法
 程序运行方法为 `./client get current var_temp`
