@@ -5,7 +5,11 @@ serverfd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)# 创建 socket 对�
 ip_port = ("127.0.0.1", 1600)# 设置端口
 serverfd.bind(ip_port)# 绑定端口
 serverfd.listen(5)
-connection, address = serverfd.accept()# 建立客户端连接
+try:
+    connection, address = serverfd.accept()# 建立客户端连接
+except Exception as e:
+    print(e)
+    exit(0)
 print("%s 已连接" % address[0])
 connection.send('hello'.encode())
 isok = True
