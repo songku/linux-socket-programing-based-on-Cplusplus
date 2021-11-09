@@ -2,7 +2,9 @@
 import threading
 import socket
 serverfd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)# 创建 socket 对象,选择 AF_INET 的目的就是使用 IPv4 进行通信,SOCK_STREAM提供面向连接的稳定数据传输
-ip_port = ("127.0.0.1", 1600)# 设置端口
+#ip_port = ("127.0.0.1", 1600)# 仅接收来自127.0.0.1的请求
+ip_port = ("", 1600)# 可以接收请求和自己的静态ip连接的请求
+
 serverfd.bind(ip_port)# 绑定端口
 serverfd.listen(5)
 try:
