@@ -14,7 +14,7 @@ def receieve(clientfd):
     global isok
     while isok:
         try:
-            t = clientfd.recv(1024).decode("utf8")  # 客户端也同理
+            t = clientfd.recv(1024).decode("utf8") #接收数据
             if t == "exit":
                 isok = False
                 print("Exit......")
