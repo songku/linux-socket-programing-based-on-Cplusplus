@@ -4,7 +4,11 @@ import socket
 ip=input("input the ip addr you want to connect:")
 clientfd = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ip_port = (ip, 1600)# 设置端口
-clientfd.connect(ip_port)# 方法打开一个 TCP 连接到主机
+try:
+    clientfd.connect(ip_port)# 方法打开一个 TCP 连接到主机
+except Exception as e:
+    print(e)
+    exit(0)
 isok = True
 def receieve(clientfd):
     global isok
